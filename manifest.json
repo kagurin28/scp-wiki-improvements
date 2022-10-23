@@ -1,26 +1,35 @@
 {
 	"manifest_version": 2,
-	"name": "SCP Ratings in Mainlist",
-	"version": "2.0",
+	"name": "SCP Wiki Improvements",
+	"version": "3.0",
 	"author": "Oliver Robey",
 	
-	"description": "Shows the rating of the SCP in the mainlist (SCP Series, SCP Series 2, etc).",
+	"description": "Makes various improvements to the SCP wiki (scp-wiki.wikidot.com)",
+	
+	"permissions": [ "storage", "https://scp-wiki.wikidot.com/*" ],
 	
 	"icons": {
-		"48": "icon-48.png"
+		"16": "icon-16.png",
+		"32": "icon-32.png",
+		"48": "icon-48.png",
+		"128": "icon-128.png"
+	},
+	
+	"browser_action": {
+		"default_icon": {
+			"16": "icon-16.png",
+			"32": "icon-32.png",
+			"48": "icon-48.png",
+			"128": "icon-128.png"
+		},
+		"default_title": "SCP Wiki Improvements",
+		"default_popup": "popup.html"
 	},
 	
 	"content_scripts": [
 		{
-			"matches": [
-				"https://scp-wiki.wikidot.com/scp-series*",
-				"https://scp-wiki.wikidot.com/joke-scps*",
-				"https://scp-wiki.wikidot.com/scp-ex",
-				"https://scp-wiki.wikidot.com/explained-scps-tales-edition",
-				"https://scp-wiki.wikidot.com/scp-001"
-			],
-			
-			"js": ["scp-ratings-in-mainlist.js"]
+			"matches": [ "https://scp-wiki.wikidot.com/*" ],
+			"js": [ "scp-ratings-in-mainlist.js" ]
 		}
 	]
 }
